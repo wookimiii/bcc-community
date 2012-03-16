@@ -11,7 +11,7 @@ class MyApp < Sinatra::Base
   set :session_secret, 'super secret'
 
   Mongoid.configure do |config|
-    if ENV['MONGOHQ_URL']
+    if ENV['MONGOLAB_URI']
       conn = Mongo::Connection.from_uri(ENV['MONGOLAB_URI'])
       uri = URI.parse(ENV['MONGOLAB_URI'])
       config.master = conn.db(uri.path.gsub(/^\//, ''))
