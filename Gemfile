@@ -4,6 +4,8 @@ gem "thin"
 
 gem "haml"
 gem "sass"
+gem 'sinatra-mongoid', :require => 'sinatra/mongoid'
+gem "bson_ext"
 
 group :development do
   gem "awesome_print"
