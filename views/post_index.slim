@@ -2,6 +2,17 @@
   form action='/posts' method='POST'
     textarea type='text' name='post'
     button.btn.btn-primary SHARE
-= session[:uid]
-p = session[:user].to_json
 
+#posts
+  - @posts.each do |post|
+    .post
+      span 
+        image src="#{post.user.image}"
+        = "#{post.user.name} said "
+        i = post.created_at.ago_in_words
+      p.post
+        = post.body
+      span.timestamp
+        = post.created_at
+      .clearfix
+      hr

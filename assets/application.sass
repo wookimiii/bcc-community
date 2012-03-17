@@ -1,8 +1,14 @@
+*
+  box-sizing: border-box
+
 body
-  padding-top: 40px
+  padding-top: 50px
 
 #header
   color: #444
+  position: fixed
+  box-shadow: 0px 1px 3px 3px #CCC
+
   h2
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25)
     float: left
@@ -20,10 +26,38 @@ body
       border: #AAA solid 1px
 
 #new-post
-  margin: 10px 20px
   text-align: center
   textarea
     width: 99%
   button
     width: 100%
 
+#posts
+  span
+    color: #666
+  img
+    height: 25px
+    display: inline
+    border: #CCC solid 1px
+    margin-right: 5px
+  p
+    border-bottom: 1px solid rgba(200, 200, 200, 0.4)
+    -webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1)
+    -moz-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1)
+    box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1)
+    -webkit-border-radius: 5px
+    -moz-border-radius: 5px
+    border-radius: 5px
+    font-size: 1.2em
+    margin: 10px 25px
+    padding: 20px
+    color: #666
+  .timestamp
+    float: right
+    font-size: 0.7em
+  hr
+    display: block
+    clear: both
+    height: 0
+    border-top: 1px solid #CCC
+    border-bottom: 1px solid #DDD

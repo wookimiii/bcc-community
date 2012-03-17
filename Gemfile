@@ -8,6 +8,7 @@ gem 'sinatra-mongoid', :require => 'sinatra/mongoid'
 gem "bson_ext"
 gem "omniauth"
 gem "omniauth-facebook"
+gem "time-ago-in-words", "~> 0.1.2"
 
 group :development do
   gem "awesome_print"

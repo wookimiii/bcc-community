@@ -3,6 +3,7 @@ require 'sinatra/base'
 require 'omniauth-facebook'
 require 'slim'
 require 'mongoid'
+require 'time-ago-in-words'
 
 require_relative 'routes/init'
 require_relative 'helpers/init'
