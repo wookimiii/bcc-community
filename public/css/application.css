@@ -1,0 +1,19 @@
+body {
+  padding-top: 40px; }
+
+#header {
+  color: #444444; }
+  #header h2 {
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    float: left; }
+  #header .user-info {
+    float: right;
+    margin-top: 5px; }
+    #header .user-info span {
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+      font-size: 1.1em;
+      top: 3px;
+      position: relative; }
+    #header .user-info img {
+      height: 23px;
+      border: #aaaaaa solid 1px; }

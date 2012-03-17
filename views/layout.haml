@@ -19,7 +19,12 @@
     %title Bible Community Church
 
   %body
-    #container.container
+    #header.navbar.navbar-fixed-top
+      .navbar-inner
+        .container-fluid
+          =haml :_top_nav
+
+    #container.container-fluid
       =yield
     /Le javascript
     %script{:src=>"http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"}
