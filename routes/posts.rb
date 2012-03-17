@@ -5,4 +5,8 @@ class MyApp < Sinatra::Base
     slim :post_index
   end
 
+  post '/posts' do
+    p params
+  end
+
 end

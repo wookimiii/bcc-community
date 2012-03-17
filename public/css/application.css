@@ -17,3 +17,11 @@ body {
     #header .user-info img {
       height: 23px;
       border: #aaaaaa solid 1px; }
+
+#new-post {
+  margin: 10px 20px;
+  text-align: center; }
+  #new-post textarea {
+    width: 99%; }
+  #new-post button {
+    width: 100%; }

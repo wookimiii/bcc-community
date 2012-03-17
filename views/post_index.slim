@@ -1,5 +1,7 @@
 #new-post
-  input type='text' name='post'
+  form action='/posts' method='POST'
+    textarea type='text' name='post'
+    button.btn.btn-primary SHARE
 = session[:uid]
 p = session[:user].to_json
 
