@@ -6,6 +6,8 @@ gem "haml"
 gem "sass"
 gem 'sinatra-mongoid', :require => 'sinatra/mongoid'
 gem "bson_ext"
+gem "omniauth"
+gem "omniauth-facebook"
 
 group :development do
   gem "awesome_print"

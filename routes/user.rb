@@ -1,16 +1,20 @@
 class MyApp < Sinatra::Base
   before do
     @flash = session.delete(:flash)
+
+    # checking if logged in
+    if request.path_info != '/auth/facebook/callback' 
+     redirect '/auth/facebook' unless session[:uid]
+    end
   end
 
-  get '/' do
-    redirect '/posts'
+  post '/auth/facebook/callback' do
+    session[:uid] = request.env['omniauth.auth']["uid"]
+    redirect '/'
   end
 
-  get '/test-flash' do
-    session[:flash] = 'This is a flash'
-    redirect to('/')
-    erb :index
+  get "/logout" do
+    session.delete(:uid)
   end
 
 end

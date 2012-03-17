@@ -1,4 +1,4 @@
 require_relative 'admin'
 require_relative 'user'
-require_relative 'post'
+require_relative 'posts'
 
