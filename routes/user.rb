@@ -8,13 +8,16 @@ class MyApp < Sinatra::Base
     end
   end
 
-  post '/auth/facebook/callback' do
+  get '/auth/facebook/callback' do
     session[:uid] = request.env['omniauth.auth']["uid"]
+    session[:user] = request.env['omniauth.auth']['info']
     redirect '/'
   end
 
   get "/logout" do
     session.delete(:uid)
+    session.delete(:user)
+    "Successfuly Logged out"
   end
 
 end
