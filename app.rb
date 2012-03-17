@@ -1,13 +1,14 @@
 require 'sinatra/base'
-require 'omniauth-facebook'
 
+require 'omniauth-facebook'
+require 'slim'
+require 'mongoid'
 
 require_relative 'routes/init'
 require_relative 'helpers/init'
 require_relative 'models/init'
 
-require 'mongoid'
-
+# FACEBOOK AUTHENTICATION PERMISSIONS
 SCOPE = 'email,read_stream'
 
 class MyApp < Sinatra::Base
@@ -16,6 +17,12 @@ class MyApp < Sinatra::Base
 
   # turn off sinatra default X-Frame-Options for FB canvas
   set :protection, :except => :frame_options
+
+  use OmniAuth::Builder do 
+    provider :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], :scope => SCOPE
+  end
+
+  Slim::Engine.set_default_options :pretty => true
 
   Mongoid.configure do |config|
     if ENV['MONGOLAB_URI']
@@ -27,18 +34,12 @@ class MyApp < Sinatra::Base
     end
   end
   
-  use OmniAuth::Builder do 
-    provider :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], :scope => SCOPE
-  end
-
-
   configure do
     set :app_file, __FILE__
   end
 
   configure :development do
     enable :logging, :dump_errors, :raise_errors
-
   end
 
   configure :production do
