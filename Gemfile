@@ -8,10 +8,10 @@ gem 'sinatra-mongoid', :require => 'sinatra/mongoid'
 gem "bson_ext"
 gem "omniauth"
 gem "omniauth-facebook"
+gem "shotgun"
 
 group :development do
   gem "awesome_print"
-  gem "shotgun"
   gem "yard"
   gem "rdiscount"
 end
