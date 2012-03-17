@@ -10,7 +10,7 @@
         image src="#{post.user.image}"
         = "#{post.user.name} said "
         i = post.created_at.ago_in_words
-      p.post
+      pre.post
         = post.body
       span.timestamp
         = post.created_at
