@@ -2,7 +2,7 @@
   box-sizing: border-box; }
 
 body {
-  padding-top: 50px;
+  padding-top: 60px;
   background-color: #7fcdf4;
   background-image: url(/img/background.jpg);
   background-attachment: fixed;
@@ -16,7 +16,9 @@ body {
   box-shadow: 0px 1px 5px 5px rgba(0, 0, 0, 0.5); }
   #header h2 {
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    float: left; }
+    float: left;
+    overflow-y: hidden;
+    height: 36px; }
   #header .user-info {
     float: right;
     margin-top: 5px; }
@@ -33,6 +35,7 @@ body {
 #new-post {
   text-align: center; }
   #new-post textarea {
+    height: 100px;
     width: 99%; }
   #new-post button {
     width: 100%; }
